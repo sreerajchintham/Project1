@@ -50,6 +50,8 @@ I chose 1. Directions become verbs
     If a certain exit is not mentioned in the **locked** dictionary then the exit is unlocked.
     And there may not be locked dictionary at all in some rooms.
     Exactly one Item is required to open a single Exit at a point of time.
+    And once you try to enter a locked room the gameengine automatically checks your inventory for required item.
+    If the item is not present in the inventory the player will not be allowed to use the exit.
     I created locked method and self.locked(dictionary which stores the *locked* dictionary of THE CURRENT ROOM) variable.
     The locked method is made to be a bridge method between **action** method  and **go** verb method.
     If input string contains go and has and **pclist** (list of input string split by spaces) has length of 2 .
