@@ -80,7 +80,6 @@ try:
                 else:
                     print(f"There's no way to go {self.pclist[1]}.")
             else:
-                print(self.pclist)
                 print("Sorry, you need to 'go' somewhere.")
             Verbs.playerinput(self)
             return
@@ -122,8 +121,6 @@ try:
                     self.inv.append(self.playerchoice[4:])
                     self.inv_string = "Inventory: \n" + "\n".join(self.inv)
                     self.items.remove(self.playerchoice[4:])
-                    # print(self.items)
-                    # self.items_string =
                     print(f"You pick up the {self.playerchoice[4:]}.")
                 else :
                     print(f"There's no {self.playerchoice[4:]} anywhere.")
@@ -141,7 +138,6 @@ try:
                         self.inv_string = ''
                         
                     else :
-                        print(self.inv)
                         self.inv_string = "Inventory: \n" + "\n".join(self.inv)
                     print("You drop the "+ self.pclist[1])
                 else:
@@ -162,7 +158,6 @@ try:
                         self.inv_string = ''
                         
                     else :
-                        print(self.inv)
                         self.inv_string = "Inventory: \n" + "\n".join(self.inv)
                     print("You drop the "+ self.playerchoice[5:])
                 else:
@@ -193,6 +188,9 @@ try:
                 Verbs.drop(self)
             elif self.playerchoice in self.directions :
                 Verbs.abbrev(self)
+            return
+
+
 
             
             
