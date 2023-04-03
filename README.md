@@ -1,5 +1,5 @@
 Sreeraj Chintham <schintha1@stevens.edu>
-[Github - Project1]((https://github.com/sreerajchintham/Project1))
+[Github - Project1](https://github.com/sreerajchintham/Project1)
 ### Time spent on the project - 20 hours
 ### HOW I TESTED MY CODE
 I tested my code using two maps given in the project description.After adding the extension I tested my code using a Map I made to work my extensions.
