@@ -250,7 +250,7 @@ try:
 
         
 except EOFError:
-    print("Use 'quit' to exit.")
+    print("\nUse 'quit' to exit.")
     v.playerinput()
 
 
