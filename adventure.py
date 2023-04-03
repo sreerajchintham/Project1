@@ -214,21 +214,9 @@ try:
                 
                 else:
                     Verbs.go(self)
-             else:
-				Verbs.go(self)
-                
-                
-
+            else:
+                Verbs.go(self)
             return
-
-
-                   
-
-                
-
-
- 
-            
 
 
         def playerinput(self) :        
