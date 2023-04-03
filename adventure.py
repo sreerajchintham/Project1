@@ -105,7 +105,7 @@ try:
                 if self.pclist[1] in self.items :
 
                     self.inv.append(self.pclist[1])
-                    self.inv_string = "Inventory: \n  " + "\n".join(self.inv)
+                    self.inv_string = "Inventory: \n  " + "\n  ".join(self.inv)
                     self.items.remove(self.pclist[1])
        
                     print(f"You pick up the {self.pclist[1]}.")
