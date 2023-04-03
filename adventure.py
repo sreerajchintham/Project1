@@ -47,7 +47,7 @@ try:
 
             if len(self.items) != 0 : 
                 
-                self.items_string = "Items: " + ", ".join(self.items)  +" \n\n"  
+                self.items_string = "Items: " + ", ".join(self.items)  +"\n\n"  
             else :
                 
                 self.items_string = ''
@@ -57,7 +57,7 @@ try:
             self.exits_string = "Exits: " + " ".join(self.exits.keys())
             
             # self.prompt = "> " + self.name + "\n\n" + self.desc + "\n\n" + self.items_string + self.exits_string +"\n"
-            self.prompt = f'> {self.name} \n\n{self.desc} \n\n{self.items_string}{self.exits_string} \n' 
+            self.prompt = f'> {self.name}\n\n{self.desc}\n\n{self.items_string}{self.exits_string}\n' 
             print(self.prompt)
             return
         
@@ -78,9 +78,9 @@ try:
                     self.roomid = self.exits[self.pclist[1]]
                     Game.opening_dialogue(self)
                 else:
-                    print(f"There's no way to go {self.pclist[1]}. ")
+                    print(f"There's no way to go {self.pclist[1]}.")
             else:
-                print("Sorry, you need to 'go' somewhere. ")
+                print("Sorry, you need to 'go' somewhere.")
             Verbs.playerinput(self)
             return
         
@@ -91,7 +91,7 @@ try:
         
         def inventory(self) :
             if self.inv_string == '':
-                print("You're not carrying anything. ")
+                print("You're not carrying anything.")
                 
             else :
             
@@ -108,9 +108,9 @@ try:
                     self.inv_string = "Inventory: \n  " + "\n".join(self.inv)
                     self.items.remove(self.pclist[1])
        
-                    print(f"You pick up the {self.pclist[1]}. ")
+                    print(f"You pick up the {self.pclist[1]}.")
                 else:
-                    print(f"There's no {self.pclist[1]} anywhere. ")
+                    print(f"There's no {self.pclist[1]} anywhere.")
             
             elif len(self.pclist) == 1 :
 
@@ -119,7 +119,7 @@ try:
             else:
                 if self.playerchoice[4:] in self.items:
                     self.inv.append(self.playerchoice[4:])
-                    self.inv_string = "Inventory: \n" + "\n".join(self.inv)
+                    self.inv_string = "Inventory: \n  " + "\n  ".join(self.inv)
                     self.items.remove(self.playerchoice[4:])
                     print(f"You pick up the {self.playerchoice[4:]}.")
                 else :
@@ -138,8 +138,8 @@ try:
                         self.inv_string = ''
                         
                     else :
-                        self.inv_string = "Inventory: \n" + "\n".join(self.inv)
-                    print("You drop the "+ self.pclist[1])
+                        self.inv_string = "Inventory: \n  " + "\n  ".join(self.inv)
+                    print("You drop the "+ self.pclist[1]+".")
                 else:
                     print(f"You don't have the {self.pclist[1]} in your inventory")
             
@@ -158,11 +158,11 @@ try:
                         self.inv_string = ''
                         
                     else :
-                        self.inv_string = "Inventory: \n" + "\n".join(self.inv)
-                    print("You drop the "+ self.playerchoice[5:])
+                        self.inv_string = "Inventory: \n  " + "\n  ".join(self.inv)
+                    print("You drop the "+ self.playerchoice[5:]+".")
                 else:
-                    print("entered else no item in inventory")
-                    print(f"You don't have the {self.playerchoice[5:]} in your inventory")
+                    
+                    print(f"You don't have the {self.playerchoice[5:]} in your inventory.")
                 
             Verbs.playerinput(self)
             return
