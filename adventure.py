@@ -108,15 +108,14 @@ try:
                     self.inv.append(self.pclist[1])
                     self.inv_string = "Inventory: \n" + "\n".join(self.inv)
                     self.items.remove(self.pclist[1])
-                    # print(self.items)
-                    # self.items_string =
+       
                     print(f"You pick up the {self.pclist[1]}.")
                 else:
                     print(f"There's no {self.pclist[1]} anywhere.")
             
             elif len(self.pclist) == 1 :
 
-                    print("Sorry, you need to 'get' something.")
+                print("Sorry, you need to 'get' something.")
 
             else:
                 if self.playerchoice[4:] in self.items:
@@ -198,21 +197,27 @@ try:
             
             
         def is_locked(self) :
+            if len(self.pclist) == 2 :
 
-            if self.pclist[1] in self.locked :
-                print(f"\nThe Exit is locked.\n\nYou need {self.locked[self.pclist[1]]} to unlock the exit\n")
-                print("Checking your inventory...\n")
-                if self.locked[self.pclist[1]] in self.inv :
-                    print(f"You have the {self.locked[self.pclist[1]]}\n")
-                    print("The exit is unlocked.\n")
-                    del self.locked[self.pclist[1]]
-                    Verbs.go(self)
+                if self.pclist[1] in self.locked :
+                    print(f"\nThe Exit is locked.\n\nYou need {self.locked[self.pclist[1]]} to unlock the exit\n")
+                    print("Checking your inventory...\n")
+                    if self.locked[self.pclist[1]] in self.inv :
+                        print(f"You have the {self.locked[self.pclist[1]]}\n")
+                        print("The exit is unlocked.\n")
+                        del self.locked[self.pclist[1]]
+                        Verbs.go(self)
+                    else:
+                        print(f"You don't have the {self.locked[self.pclist[1]]}")
+                        print(f"Visit next time when you have the {self.locked[self.pclist[1]]}")
+                        Verbs.playerinput(self)
+                
                 else:
-                    print(f"You don't have the {self.locked[self.pclist[1]]}")
-                    print(f"Visit next time when you have the {self.locked[self.pclist[1]]}")
-                    Verbs.playerinput(self)
-            else:
-                Verbs.go(self)
+                    Verbs.go(self)
+             else:
+				Verbs.go(self)
+                
+                
 
             return
 
